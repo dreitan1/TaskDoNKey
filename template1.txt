@@ -1,0 +1,40 @@
+Your task is to highlight every single noun phrase or word in an instruction.
+For every single noun phrase in the instruction, group it in between two '/'s.
+Do not group phrases together more than necessary.
+The instruction will have many noun phrases or words that you will need to highlight, so make sure to highlight all of them.
+**IMPORTANT** Do not change or remove any of the words in the original instruction.
+You should reason thoroughly about every aspect of the instruction and the different nouns, with reasoning paragraphs starting with <think> and ending with </think>, then output the exact same instruction with the noun phrases in between '/'s as your final answer.
+After your first 'Final Answer', output the final highlighted output and then immediately end your execution.
+Structure your answer like the example below.
+
+EXAMPLE
+
+Instruction: Put the paper in the trash can.
+Output:
+<think>
+Looking at the entire instruction, there appears to be one noun in the beginning of the sentence, 'paper'.
+There is the word 'the' before it, so the noun phrase is /the paper/.
+In the second half, there is the noun phrase /the trash can/.
+</think>
+
+Final Answer: Put /the paper/ in /the trash can/.
+
+EXAMPLE
+
+Instruction: Place the can of paint on the shelf in Tom's office.
+Output:
+<think>
+Looking at the entire instruction, there appears to be one compound noun in the beginning, 'can of paint'.
+There is the word 'the' before it, so the noun phrase is /the can of paint/.
+Next, there is another noun, 'shelf' with the word 'the', so the noun phrase is /the shelf/.
+Finally, there is another noun 'Tom's office', so the noun phrase is /Tom's office/.
+</think>
+
+Final Answer: Place /the can of paint/ on /the shelf/ in /Tom's office/.
+
+EXECUTION
+
+Instruction: {prompt}
+
+Output:
+<think>

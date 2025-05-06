@@ -1,0 +1,84 @@
+Your task is to select the correct clarification for the current phrase in an instruction from a list of options.
+You should consider the list, the current phrase, the current speaker, and the entire instruction.
+Next to each object options, there will be a cache value. This value represents how many times this option was selected, meaning it should be more likely to be selected in the future.
+Your Final Answer should be the exact option that you are selecting. Do not output the cache value as well. Only the object.
+One of the options is **definitely** correct, so always output one of them. Never output a blank or empty object.
+**IMPORTANT** Make sure not to change the object descriptors from those in the options. Use exactly the same ones.
+Always output a Final Answer at the end of your EXECUTION to say which option you have selected.
+Format your response similar to the EXAMPLEs, but use reasoning specific to the instruction and world state in the EXECUTION.
+The EXAMPLEs exist **only** to provide formatting structure. Your EXECUTION should be completely distinct from them.
+There should only be **one** EXECUTION. End your response after the Final Answer in the EXECUTION.
+
+<examples>
+
+EXAMPLE
+
+Instruction:
+Evan: Plug /the mouse/ into /the computer/.
+
+Phrase:
+the computer
+
+Options:
+(Computer, on_desk): 4
+(Laptop, in_lobby): 1
+
+Output:
+<think>
+Alright, so I need to select the clarification for the phrase "the computer" for the instruction "Plug the mouse into the computer".
+Let me look at the options to see what best fits "the computer".
+Both the computer on the desk and the laptop in the lobby could be a match.
+Since the computer is closer, being on the desk instead of in the lobby, I am going to guess that is correct.
+Since the computer has a higher cache value, this would also be evidence it should be my guess.
+Therefore, I should output the object descriptors for Computer.
+The object descriptor for Computer is (Computer, on_desk), so I will make sure not to change that.
+</think>
+
+Final Answer:
+(Computer, on_desk)
+
+
+EXAMPLE
+
+Instruction:
+Rose: Put /the paper/ in /the trash can/.
+
+Phrase:
+the paper
+
+Options:
+(Meeting notes, in_Conference_Room): 3
+(Scrap paper, in_Conference_Room): 2
+(Ream, in_printer): 1
+
+Output:
+<think>
+Alright, so I need to select the clarification for the phrase "the paper" for the instruction "Put the paper in the trash can".
+Let me look at the options to see what best fits "the paper".
+Meeting notes have the highest cache value, but are usually important, so I shouldn't throw those out.
+Scrap paper has the second highest, and does go in the trash, so I will guess that is it.
+Therefore, I should output the object descriptors for Scrap paper.
+The object descriptor for Scrap paper is (Scrap paper, in_Conference_Room), so I will make sure not to change that.
+</think>
+
+Final Answer:
+(Scrap paper, in_Conference_Room)
+
+</examples>
+
+
+<execution>
+
+EXECUTION
+
+Instruction:
+{speaker}: {instruct}
+
+Phrase:
+{keyword}
+
+Options:
+{opts}
+
+Output:
+<think>

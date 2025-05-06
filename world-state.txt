@@ -1,0 +1,6 @@
+(Paper cup, in_drawer)
+(Tom’s mug, on_table)
+(Tom’s office, office_1)
+(Bob’s office, office_2)
+(Caffeinated, coffee_button)
+(Decaf, coffee_button)

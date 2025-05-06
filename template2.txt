@@ -1,0 +1,95 @@
+Your task is to provide possible disambiguations for the phrase below.
+The phrase is part of a broader instruction, so think about the entire instruction, the speaker, and the world state when reasoning.
+Given the world state below, provide all of the possible options that you think could be likely.
+After reasoning, provide your Final Answer in a newline-seperated list, containing the exact item descriptors from the world state.
+**IMPORTANT** Make sure not to change the object descriptors from those in the world state. Use exactly the same ones.
+**IMPORTANT** Only choose items from the current world state, and not from EXAMPLE world states. **Never** use any information from the EXAMPLEs.
+Format your response similar to the EXAMPLEs, but use reasoning specific to the instruction and world state in the EXECUTION.
+The EXAMPLEs exist **only** to provide formatting structure. Your EXECUTION should be completely distinct from them.
+There should only be **one** EXECUTION. End your response after the Final Answer in the EXECUTION.
+
+<examples>
+
+EXAMPLE
+
+World State:
+(Computer, on_desk)
+(Laptop, in_lobby)
+(Computer mouse, in_drawer)
+(Tom's office, office_3)
+
+Instruction:
+Evan: Plug the mouse into the computer.
+
+Phrase to Disambiguate:
+the computer
+
+Output:
+<think>
+Alright, so I need to disambiguate the phrase "the computer" for the instruction "Plug the mouse into the computer".
+Let me look at the world state to see what I can find that would fit "the computer".
+"Computer" could be a match.
+A laptop is a kind of computer, so "Laptop" could match.
+Therefore, I should output the object descriptors for Computer and Laptop, so I will look at the current world state to find those.
+The object descriptor for Computer is (Computer, on_desk), so I will make sure not to change that.
+The object descriptor for Scrap paper is (Laptop, in_lobby), so I will make sure not to change that.
+</think>
+
+Final Answer:
+1. (Computer, on_desk)
+2. (Laptop, in_lobby)
+
+
+EXAMPLE
+
+World State:
+(Meeting notes, in_Conference_Room)
+(Scrap paper, in_Conference_Room)
+(Ream, in_printer)
+(Trash can, in_Lobby)
+(Soda can, on_table)
+(Lobby, room_1)
+(Conference Room, room_2)
+
+Instruction:
+Rose: Put the paper in the trash can.
+
+Phrase to Disambiguate:
+the paper
+
+Output:
+<think>
+Alright, so I need to disambiguate the phrase "the paper" for the instruction "Put the paper in the trash can".
+Let me look at the world state to see what I can find that would fit "the paper".
+Notes are a kind of paper, so "Meeting notes" could be it.
+Scrap paper is a kind of paper, so it could be "Scrap paper".
+"Ream" refers to a ream of paper, so it could also be a match.
+Therefore, I should output the object descriptors for Meeting notes, Ream of paper, and Scrap paper, so I will look at the current world state to find those.
+The object descriptor for Meeting notes is (Meeting notes, in_Conference_Room), so I will make sure not to change that.
+The object descriptor for Scrap paper is (Scrap paper, in_Conference_Room), so I will make sure not to change that.
+The object descriptor for Ream of paper is (Ream of paper, in_printer), so I will make sure not to change that.
+</think>
+
+Final Answer:
+1. (Meeting notes, in_Conference_Room)
+2. (Scrap paper, in_Conference_Room)
+3. (Ream, in_printer)
+
+</examples>
+
+
+<execution>
+
+EXECTUTION
+
+World State:
+{world state}
+
+Insutrction:
+{instruct}
+
+Word to Disambiguate:
+{word}
+
+Output:
+<think>
